@@ -40,6 +40,8 @@ std::string to_string(ChanFieldType field_type) {
             return "FLOAT64";
         case ChanFieldType::CHAR:
             return "CHAR";
+        case ChanFieldType::UINT8x3:
+            return "UINT8x3";
         default:
             return "UNKNOWN";
     }

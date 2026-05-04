@@ -39,6 +39,7 @@ static constexpr cf_type REFLECTIVITY2 =
                       ///< more details
 
 static constexpr cf_type NEAR_IR = "NEAR_IR";    ///< near_ir in photons
+static constexpr cf_type RGB = "RGB";            ///< per-pixel RGB color (UINT8x3)
 static constexpr cf_type FLAGS = "FLAGS";        ///< 1st return flags
 static constexpr cf_type FLAGS2 = "FLAGS2";      ///< 2nd return flags
 static constexpr cf_type NORMALS = "NORMALS";    ///< 1st return normal values
@@ -119,6 +120,7 @@ enum class ChanFieldType {
     FLOAT32 = 9,
     FLOAT64 = 10,
     CHAR = 11,
+    UINT8x3 = 12,  ///< packed 3-channel uint8 (e.g. RGB), 3 bytes per element
     /* offsetting 30 for structs to pad their numbers for versioning */
     ZONE_STATE = 30,
     UNREGISTERED = 100

@@ -247,6 +247,11 @@ struct OUSTER_API_CLASS FieldDescriptor {
                 return array<char>(shape);
             case ChanFieldType::ZONE_STATE:
                 return array<ZoneState>(shape);
+            case ChanFieldType::UINT8x3:
+                // 3-channel uint8 (e.g. RGB): shape is [H, W, 3] in the OSF
+                // file — just decode as UINT8 preserving all dims.
+                // Access per-pixel bytes via Field::get<uint8_t>().
+                return array<uint8_t>(shape);
             default:
                 throw std::invalid_argument(
                     "fd_array: unsupported ChanFieldType");
